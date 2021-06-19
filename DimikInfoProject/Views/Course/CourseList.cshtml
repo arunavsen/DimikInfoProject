@@ -1,0 +1,33 @@
+﻿@model List<DimikInfoProject.Models.Course>
+
+<table>
+    <thead>
+        <th>
+            Couse Code
+        </th>
+        <th>
+           Course Name
+        </th>
+        <th>
+            Action
+        </th>
+    </th>
+    <tbody>
+        @foreach(var course in Model)
+            {
+        <tr>
+            <td>
+                @course.CourseCode
+            </td>
+            <td>
+                @course.CourseName
+            </td>
+            <td>
+                <input type="button" value="Add Course" id="addCourse" data-id="@course.Id" data-url="@ViewBag.PageUrl"/>
+                <input type="button" value="Edit Course" id="addCourse" data-id="@course.Id" data-url="@ViewBag.PageUrl" />
+                <input type="button" value="Delete Course" id="addCourse" data-id="@course.Id" data-url="@ViewBag.PageUrl"/>
+            </td>           
+        </tr>
+            }
+    </tbody>
+</table>
