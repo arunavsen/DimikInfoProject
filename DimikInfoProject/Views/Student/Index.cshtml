@@ -1,0 +1,43 @@
+﻿@model List<DimikInfoProject.Models.Student>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <thead>
+    <th>
+        Name
+    </th>
+    <th>
+        Email
+    </th>
+    <th>
+        Phone
+    </th>
+    <th>
+        Action
+    </th>
+    </th>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    @item.Phone
+                </td>
+                <td>
+                    <input type="button" value="Add Course" id="addCourse" data-id="@item.Id" data-url="@ViewBag.PageUrl" />
+                    <input type="button" value="Edit Course" id="addCourse" data-id="@item.Id" data-url="@ViewBag.PageUrl" />
+                    <input type="button" value="Delete Course" id="addCourse" data-id="@item.Id" data-url="@ViewBag.PageUrl" />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
